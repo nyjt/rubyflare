@@ -17,6 +17,10 @@ module Rubyflare
       body[:result].first
     end
 
+    def result_info
+      body[:result_info]
+    end
+
     def results
       body[:result]
     end
