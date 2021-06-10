@@ -3,7 +3,7 @@ describe Rubyflare::Connect do
   let(:email)   { ENV['CLOUDFLARE_EMAIL'] }
   let(:api_key) { ENV['CLOUDFLARE_API_KEY'] }
 
-  subject(:connection) { described_class.new(email, api_key) }
+  subject(:connection) { described_class.new(email: email, api_key: api_key) }
 
   describe '#initialize' do
 
