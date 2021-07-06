@@ -4,7 +4,7 @@ describe Rubyflare do
     subject(:connection) { described_class.connect_with_token('token') }
 
     it 'creates an instance of RubyFlare::Connect with passed arguments' do
-      expect(Rubyflare::Connect).to receive(:new).with(api_token: 'token')
+      expect(Rubyflare::Connect).to receive(:new).with(hash_including(api_token: 'token'))
       connection
     end    
   end
@@ -13,7 +13,7 @@ describe Rubyflare do
     subject(:connection) { described_class.connect_with('bear@dog.com', 'superapikey') }
 
     it 'creates an instance of RubyFlare::Connect with passed arguments' do
-      expect(Rubyflare::Connect).to receive(:new).with(email: 'bear@dog.com', api_key: 'superapikey')
+      expect(Rubyflare::Connect).to receive(:new).with(hash_including(email: 'bear@dog.com', api_key: 'superapikey'))
       connection
     end
 
