@@ -7,8 +7,7 @@ module Rubyflare
 
       unless successful?
         message = "Unable to #{method_name.to_s.upcase} to endpoint: " \
-                  "#{endpoint}. Inspect Rubyflare::ConnectionError#response "\
-                  "for further details"
+                  "#{endpoint}. #{errors.map{ |err| err[:message] || ""}.join(" ")}"
         raise Rubyflare::ConnectionError.new(message, self)
       end
     end
